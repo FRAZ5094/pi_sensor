@@ -1,10 +1,11 @@
 import Adafruit_DHT
 import time
 
-DHT_SENSOR=Adafruit_DHT.DHT11
+DHT_SENSOR=Adafruit_DHT.DHT22
+#DHT_SENSOR=Adafruit_DHT.DHT11
 DHT_PIN=4
 
-max_attempts=30
+max_attempts=20
 attempt=0
 
 temperature=None
@@ -16,4 +17,4 @@ while attempt<max_attempts and temperature==None:
 if attempt==max_attempts:
     print("Sensor error")
 else:
-    print(f"{int(time.time())},{int(temperature)},{int(humidity)}")
+    print(f"{int(time.time())},{temperature:0.1f},{humidity:0.1f}")
