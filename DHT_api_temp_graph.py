@@ -19,7 +19,7 @@ with open(filename, "r") as f:
             api_temps.append(float(api_temp))
 
 data = pd.DataFrame({"time": times, "DHT_temp": DHT_temps, "api_temp": api_temps})
-print(data.head())
+print(data.tail())
 
 plt.figure(0)
 plt.plot(data["time"], data["DHT_temp"], label="Inside temperature")
